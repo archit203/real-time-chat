@@ -22,7 +22,7 @@ Server.listen(8080, function() {
 const wsServer = new WebSocketServer({
     httpServer: Server,
    
-    autoAcceptConnections: true
+    autoAcceptConnections: false
 });
 
 function originIsAllowed(origin: string) {
@@ -31,6 +31,7 @@ function originIsAllowed(origin: string) {
 }
 
 wsServer.on('request', function(request) {
+    console.log("inside connect")
     if (!originIsAllowed(request.origin)) {
       // Make sure we only accept requests from an allowed origin
       request.reject();
@@ -41,10 +42,12 @@ wsServer.on('request', function(request) {
     var connection = request.accept('echo-protocol', request.origin);
     console.log((new Date()) + ' Connection accepted.');
     connection.on('message', function(message) {
+        console.log(message);
         // todo add rate limitting logic here 
         if (message.type === 'utf8') {
 
             try{
+                console.log("in with message" + message.utf8Data);
                 messageHandler(connection, JSON.parse(message.utf8Data));
             } catch(e){
 
@@ -53,14 +56,13 @@ wsServer.on('request', function(request) {
             // connection.sendUTF(message.utf8Data);
         }
     });
-    connection.on('close', function(reasonCode, description) {
-        console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
-    });
+
 });
 
 // type matching i.e join room message should have a payload of type InitMessageType
 
 function messageHandler(ws: connection, message: IncomingMessage){
+    console.log("incoming message" + JSON.stringify(message));
     if (message.type === SUPPORTED_MESSAGE_TYPES.JOIN_ROOM){
         const payload = message.payload;
         userManager.addUSer(payload.name, payload.userId, payload.roomId, ws);
