@@ -46,4 +46,16 @@ From 5 to 8
 
 https://colab.research.google.com/drive/1A89gBDrXdMoa9TQ9B_vMroD7vgEV0Bi4#scrollTo=yXmFqftm1LF9
 
+2
+https://www.kaggle.com/code/mridul2003/user-based-collaborative-filtering-recommendation 
+
+4-5 
+https://www.kaggle.com/code/mridul2003/matrix-factorization-recommendation-system
+
+4 
+https://colab.research.google.com/drive/1thE-gZnjHJHRsMWuzKlcOlZeNCC72-pj?usp=sharing
+
+1-3
+https://drive.google.com/file/d/1nc0nhqsF3Yr9Nq-aWvu_xUhmBF37xKvo/view?usp=sharing
+
 
