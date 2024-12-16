@@ -36,3 +36,14 @@ https://colab.research.google.com/drive/1LjZQf_xN89beRbf9AhyaVPvwbvUISje6?usp=sh
 
 lab12
 https://colab.research.google.com/drive/1fORVOJlj89gd9KBnx-RwcJIVU_RgfLHl?usp=sharing
+
+
+
+
+Recommendation Systems LAB
+
+From 5 to 8
+
+https://colab.research.google.com/drive/1A89gBDrXdMoa9TQ9B_vMroD7vgEV0Bi4#scrollTo=yXmFqftm1LF9
+
+
